@@ -1,0 +1,17 @@
+name: Setsuzoku
+targets:
+  Setsuzoku:
+    type: framework
+    platform: [iOS, macOS, watchOS, tvOS]
+    sources: Sources
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - SetsuzokuTests_$platform
+  SetsuzokuTests:
+    type: bundle.unit-test
+    platform: [iOS, macOS, watchOS, tvOS]
+    sources: Tests
+    dependencies:
+      - target: Setsuzoku_$platform
+
